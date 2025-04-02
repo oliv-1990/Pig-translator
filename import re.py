@@ -25,3 +25,17 @@ def detect_language(phrase):
     if all("-" in word and (word.endswith("ay") or word.endswith("yay")) for word in words):
         return "Pig Latin"
     return "English"
+
+
+def translate_phrase(phrase):
+    language = detect_language(phrase)
+    words = phrase.split()
+    
+    if language == "English":
+        translated_words = [to_pig_latin(word) for word in words]
+        print("English detected. Translating to Pig Latin.")
+    else:
+        translated_words = [from_pig_latin(word) for word in words]
+        print("Pig Latin detected. Translating to English.")
+    
+    return " ".join(translated_words)
