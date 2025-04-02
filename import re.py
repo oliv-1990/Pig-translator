@@ -12,3 +12,10 @@ def to_pig_latin(word):
     
     return word
 
+def from_pig_latin(word):
+    if "-" in word:
+        parts = word.split("-")
+        if parts[1].endswith("ay"):
+            return parts[1][:-2] + parts[0]
+        return parts[0]  # Handling cases like vowel-starting words
+    return word
