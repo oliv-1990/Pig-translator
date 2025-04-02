@@ -39,3 +39,18 @@ def translate_phrase(phrase):
         print("Pig Latin detected. Translating to English.")
     
     return " ".join(translated_words)
+
+
+def main():
+    while True:
+        phrase = input("Please enter a phrase to be translated:\n")
+        translation = translate_phrase(phrase)
+        print("Translation:", translation)
+        
+        again = input("Would you like to translate again? (Y/N)\n").strip().lower()
+        if again != 'y':
+            print("Goodbye.")
+            break
+
+if __name__ == "__main__":
+    main()
