@@ -19,3 +19,9 @@ def from_pig_latin(word):
             return parts[1][:-2] + parts[0]
         return parts[0]  # Handling cases like vowel-starting words
     return word
+
+def detect_language(phrase):
+    words = phrase.split()
+    if all("-" in word and (word.endswith("ay") or word.endswith("yay")) for word in words):
+        return "Pig Latin"
+    return "English"
